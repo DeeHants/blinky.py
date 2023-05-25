@@ -16,7 +16,7 @@ class Color:
     def b(self):
         return self._b
 
-    def FromHex(hex_value):
+    def from_hex(hex_value):
         return Color(
             (hex_value & 0x00ff0000) >> 16,
             (hex_value & 0x0000ff00) >> 8,
