@@ -25,16 +25,16 @@ class StaticFrame(Frame):
     def setRangeFade(self, start, end, startColor, endColor):
         # Calculate the steps and the amount to change
         steps = end - start
-        redDelta = endColor.R() - startColor.R()
+        redDelta = endColor.r - startColor.r
         redStep = redDelta / steps
-        greenDelta = endColor.G() - startColor.G()
+        greenDelta = endColor.g - startColor.g
         greenStep = greenDelta / steps
-        blueDelta = endColor.B() - startColor.B()
+        blueDelta = endColor.b - startColor.b
         blueStep = blueDelta / steps
 
-        redRunning = startColor.R()
-        greenRunning = startColor.G()
-        blueRunning = startColor.B()
+        redRunning = startColor.r
+        greenRunning = startColor.g
+        blueRunning = startColor.b
 
         # Fill in the range
         for led in range(start, end + 1): # Remember it's exclusive

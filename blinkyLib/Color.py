@@ -1,17 +1,20 @@
 class Color:
     def __init__(self, r, g, b):
-        self.r = int(r)
-        self.g = int(g)
-        self.b = int(b)
+        self._r = int(r)
+        self._g = int(g)
+        self._b = int(b)
 
-    def R(self):
-        return self.r
+    @property
+    def r(self):
+        return self._r
 
-    def G(self):
-        return self.g
+    @property
+    def g(self):
+        return self._g
 
-    def B(self):
-        return self.b
+    @property
+    def b(self):
+        return self._b
 
     def FromHex(hex_value):
         return Color(
