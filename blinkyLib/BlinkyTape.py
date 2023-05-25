@@ -18,7 +18,7 @@ class BlinkyTape:
         if port != '':
             self.ser = serial.Serial(port, 115200)
 
-    def renderFrame(self, frame):
+    def render_frame(self, frame):
         # Creates an array big enough to hold each LED color and the terminator.
         count = frame.led_count
         data_bytes = [0] * ((count + 1) * 3)

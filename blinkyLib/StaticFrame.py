@@ -17,12 +17,12 @@ class StaticFrame(Frame):
     def led_value(self, led):
         return self._leds[led]
 
-    def setRange(self, start, end, color):
+    def set_range(self, start, end, color):
         # Set all LEDs to the same color
         for led in range(start, end + 1): # Remember it's exclusive
             self._leds[led] = color
 
-    def setRangeFade(self, start, end, startColor, endColor):
+    def set_range_fade(self, start, end, startColor, endColor):
         # Calculate the steps and the amount to change
         steps = end - start
         redDelta = endColor.r - startColor.r
@@ -45,12 +45,12 @@ class StaticFrame(Frame):
             greenRunning += greenStep
             blueRunning += blueStep
 
-    def CreateSolidFrame(color, led_count = BlinkyTape.LastLEDCount()):
+    def create_solid_frame(color, led_count = BlinkyTape.LastLEDCount()):
         frame = StaticFrame(led_count)
-        frame.setRange(0, led_count - 1, color)
+        frame.set_range(0, led_count - 1, color)
         return frame
 
-    def CreateFade(color1, color2, led_count = BlinkyTape.lastLEDCount):
+    def create_fade_frame(color1, color2, led_count = BlinkyTape.lastLEDCount):
         frame = StaticFrame(led_count)
-        frame.setRangeFade(0, led_count - 1, color1, color2)
+        frame.set_range_fade(0, led_count - 1, color1, color2)
         return frame
