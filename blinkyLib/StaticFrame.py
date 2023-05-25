@@ -22,19 +22,19 @@ class StaticFrame(Frame):
         for led in range(start, end + 1): # Remember it's exclusive
             self._leds[led] = color
 
-    def set_range_fade(self, start, end, startColor, endColor):
+    def set_range_fade(self, start, end, start_color, end_color):
         # Calculate the steps and the amount to change
         steps = end - start
-        redDelta = endColor.r - startColor.r
+        redDelta = end_color.r - start_color.r
         redStep = redDelta / steps
-        greenDelta = endColor.g - startColor.g
+        greenDelta = end_color.g - start_color.g
         greenStep = greenDelta / steps
-        blueDelta = endColor.b - startColor.b
+        blueDelta = end_color.b - start_color.b
         blueStep = blueDelta / steps
 
-        redRunning = startColor.r
-        greenRunning = startColor.g
-        blueRunning = startColor.b
+        redRunning = start_color.r
+        greenRunning = start_color.g
+        blueRunning = start_color.b
 
         # Fill in the range
         for led in range(start, end + 1): # Remember it's exclusive
