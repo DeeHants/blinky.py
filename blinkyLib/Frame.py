@@ -1,12 +1,13 @@
-﻿from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod
 
 from .Color import Color
 
 class Frame(ABC):
+    @property
     @abstractmethod
-    def ledCount(self):
+    def led_count(self):
         return 0
 
     @abstractmethod
-    def ledValue(self, led):
+    def led_value(self, led):
         return Color.Black()

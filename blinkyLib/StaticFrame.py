@@ -5,21 +5,22 @@ from .Frame import Frame
 
 class StaticFrame(Frame):
     def __init__(self, led_count = BlinkyTape.lastLEDCount):
-        self.led_count = led_count
-        self.leds = []
-        for led in range(self.led_count):
-            self.leds.append(Color.Black())
+        self._led_count = led_count
+        self._leds = []
+        for led in range(self._led_count):
+            self._leds.append(Color.Black())
 
-    def ledCount(self):
-        return self.led_count
+    @property
+    def led_count(self):
+        return self._led_count
 
-    def ledValue(self, led):
-        return self.leds[led]
+    def led_value(self, led):
+        return self._leds[led]
 
     def setRange(self, start, end, color):
         # Set all LEDs to the same color
         for led in range(start, end + 1): # Remember it's exclusive
-            self.leds[led] = color
+            self._leds[led] = color
 
     def setRangeFade(self, start, end, startColor, endColor):
         # Calculate the steps and the amount to change
@@ -38,7 +39,7 @@ class StaticFrame(Frame):
         # Fill in the range
         for led in range(start, end + 1): # Remember it's exclusive
             color = Color(redRunning, greenRunning, blueRunning)
-            self.leds[led] = color
+            self._leds[led] = color
 
             redRunning += redStep
             greenRunning += greenStep

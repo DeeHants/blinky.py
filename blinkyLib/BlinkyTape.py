@@ -20,14 +20,14 @@ class BlinkyTape:
 
     def renderFrame(self, frame):
         # Creates an array big enough to hold each LED color and the terminator.
-        count = frame.ledCount()
+        count = frame.led_count
         data_bytes = [0] * ((count + 1) * 3)
         for led in range(0, count):
             # 3 bytes, RGB, limited to a maximum of 254 as 255 is special.
             offset = led * 3
-            data_bytes[offset] = min(frame.ledValue(led).R(), 254)
-            data_bytes[offset + 1] = min(frame.ledValue(led).G(), 254)
-            data_bytes[offset + 2] = min(frame.ledValue(led).B(), 254)
+            data_bytes[offset] = min(frame.led_value(led).R(), 254)
+            data_bytes[offset + 1] = min(frame.led_value(led).G(), 254)
+            data_bytes[offset + 2] = min(frame.led_value(led).B(), 254)
 
         # The sketch only reads three bytes at a time so send 3 with the final 0xFF
         offset = count * 3
