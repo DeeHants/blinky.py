@@ -10,6 +10,9 @@ class BlinkyTape:
         return BlinkyTape.lastLEDCount
 
     def __init__(self, port = '', led_count = Consts.DEFAULT_LED_COUNT):
+        # Save the details we can
+        self._led_count = led_count
+
         # Save the LED count so it's used as the default count for all Frame objects
         BlinkyTape.lastLedCount = led_count
 
@@ -17,6 +20,10 @@ class BlinkyTape:
         self.ser = None
         if port != '':
             self.ser = serial.Serial(port, 115200)
+
+    @property
+    def led_count(self):
+        return self._led_count
 
     def render_frame(self, frame):
         # Creates an array big enough to hold each LED color and the terminator.
