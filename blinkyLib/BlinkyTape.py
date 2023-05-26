@@ -4,12 +4,31 @@ from .Constants import Consts
 from .Frame import Frame
 
 class BlinkyTape:
+    """
+    BlinkyTape interface class.
+    The communication methods and details in this library are based on the PatternPaint sketch and color swirl:
+    https://github.com/Blinkinlabs/PatternPaint/blob/master/src/PatternPaint/PatternPlayer_Sketch/PatternPlayer_Sketch.ino
+    https://github.com/Blinkinlabs/PatternPaint/blob/master/src/PatternPaint/ColorSwirl_Sketch.h
+    https://github.com/Blinkinlabs/BlinkyTape_Arduino/blob/master/examples/ColorSwirl/ColorSwirl.ino
+    """
+
     lastLEDCount = Consts.DEFAULT_LED_COUNT
 
     def LastLEDCount():
+        """
+        Gets the LED count of the last BlinkyTape instance created to use as the default count for <see cref="Frame"/> instances.
+        """
         return BlinkyTape.lastLEDCount
 
     def __init__(self, port = '', led_count = Consts.DEFAULT_LED_COUNT):
+        """
+        Initializes a new instance of the BlinkyTape class.
+
+        Args:
+            port (str, optional): The COM port name to connect to. Defaults to ''.
+            led_count (_type_, optional): The maximum number of LEDs to control. Defaults to Consts.DEFAULT_LED_COUNT.
+        """
+
         # Save the details we can
         self._led_count = led_count
 
@@ -23,9 +42,17 @@ class BlinkyTape:
 
     @property
     def led_count(self):
+        """Gets the number of LEDs in this BlinkyTape instance."""
         return self._led_count
 
     def render_frame(self, frame):
+        """
+        Renders the frame on the BlinkyTape.
+
+        Args:
+            frame (_type_): The frame to render on the BlinkyTape.
+        """
+
         # Creates an array big enough to hold each LED color and the terminator.
         count = frame.led_count
         data_bytes = [0] * ((count + 1) * 3)
