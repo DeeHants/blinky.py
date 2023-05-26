@@ -24,13 +24,13 @@ class BlinkyTape:
         """
         return BlinkyTape.lastLEDCount
 
-    def __init__(self, port = '', led_count = Consts.DEFAULT_LED_COUNT):
+    def __init__(self, port: str = '', led_count: int = Consts.DEFAULT_LED_COUNT):
         """
         Initializes a new instance of the BlinkyTape class.
 
         Args:
             port (str, optional): The COM port name to connect to. Defaults to ''.
-            led_count (_type_, optional): The maximum number of LEDs to control. Defaults to Consts.DEFAULT_LED_COUNT.
+            led_count (int, optional): The maximum number of LEDs to control. Defaults to Consts.DEFAULT_LED_COUNT.
         """
 
         # Save the details we can
@@ -49,12 +49,12 @@ class BlinkyTape:
         """Gets the number of LEDs in this BlinkyTape instance."""
         return self._led_count
 
-    def render_frame(self, frame):
+    def render_frame(self, frame: Frame):
         """
         Renders the frame on the BlinkyTape.
 
         Args:
-            frame (_type_): The frame to render on the BlinkyTape.
+            frame (Frame): The frame to render on the BlinkyTape.
         """
 
         # Creates an array big enough to hold each LED color and the terminator.

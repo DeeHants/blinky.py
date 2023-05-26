@@ -18,14 +18,14 @@ class Frame(ABC):
         return 0
 
     @abstractmethod
-    def led_value(self, led):
+    def led_value(self, led: int):
         """
         Gets the color of an individual LED.
 
         Args:
-            led (_type_): The 0 based index for the LED.
+            led (int): The 0 based index for the LED.
 
         Returns:
-            _type_: Returns the Color value of the LED.
+            Color: Returns the Color value of the LED.
         """
         return Color.Black()
