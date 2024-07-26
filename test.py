@@ -21,6 +21,18 @@ frame = blinkyLib.StaticFrame.create_fade_frame(
     blinkyLib.Color.Red(),
     blinkyLib.Color.Green()
 )
-# frame.set_range_fade(0, int(led_count / 2), blinkyLib.Color.Red(), blinkyLib.Color.FromHex(0x32CD32))
-# frame.set_range_fade(int(led_count / 2), led_count - 1, blinkyLib.Color.FromHex(0x32CD32), blinkyLib.Color.Blue())
+tape.render_frame(frame)
+
+# Multi fade
+frame = blinkyLib.StaticFrame()
+frame.set_range_fade(
+    0, int(led_count / 2),
+    blinkyLib.Color.Red(),
+    blinkyLib.Color.Green()
+)
+frame.set_range_fade(
+    int(led_count / 2), led_count - 1,
+    blinkyLib.Color.Green(),
+    blinkyLib.Color.Blue()
+)
 tape.render_frame(frame)
