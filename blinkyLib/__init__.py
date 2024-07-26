@@ -6,7 +6,9 @@ __author__ = "Deanna Earley"
 from .Constants import Consts
 from .Color import Color
 from .Frame import Frame
+from .Animation import Animation
 from .StaticFrame import StaticFrame
+from .Sequence import Sequence
 from .BlinkyTape import BlinkyTape
 
-version = "0.1"
+version = "0.2"

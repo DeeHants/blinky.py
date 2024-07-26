@@ -41,3 +41,18 @@ tape.render_frame(frame)
 from Frames.PrideFlag import PrideFlag
 frame = PrideFlag()
 tape.render_frame(frame)
+
+# Animation
+import time
+from blinkyLib.Sequence import Sequence
+animation = Sequence()
+animation.add_frames([
+    blinkyLib.StaticFrame.create_solid_frame(blinkyLib.Color.Red()),
+    blinkyLib.StaticFrame.create_solid_frame(blinkyLib.Color.Green()),
+    blinkyLib.StaticFrame.create_solid_frame(blinkyLib.Color.Blue()),
+])
+animation.reset()
+for index in range(20):
+    tape.render_frame(animation)
+    time.sleep(1)
+    animation.next_frame()
