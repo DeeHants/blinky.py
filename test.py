@@ -36,3 +36,8 @@ frame.set_range_fade(
     blinkyLib.Color.Blue()
 )
 tape.render_frame(frame)
+
+# Pride flag
+from Frames.PrideFlag import PrideFlag
+frame = PrideFlag()
+tape.render_frame(frame)
