@@ -4,6 +4,7 @@ __author__ = "Deanna Earley"
 
 import blinkyLib
 
+
 class PrideFlag(blinkyLib.StaticFrame):
     """
     Single frame with the 6 stripe pride flag.
@@ -35,7 +36,7 @@ class PrideFlag(blinkyLib.StaticFrame):
         self.set_range(50, 59, red)
 
         # Fade for 2 LEDs over each boundary
-        if (faded):
+        if faded:
             self.set_range_fade(8, 11, purple, blue)
             self.set_range_fade(18, 21, blue, green)
             self.set_range_fade(28, 31, green, yellow)

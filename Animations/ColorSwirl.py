@@ -5,6 +5,7 @@ __author__ = "Deanna Earley"
 import blinkyLib
 import math
 
+
 class ColorSwirl(blinkyLib.Animation):
     """
     ColorSwirl animation taken from the original PatternPaint example.

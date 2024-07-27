@@ -2,6 +2,7 @@ __copyright__ = "Copyright Earl Software"
 __license__ = "This source code is subject to the BSD 3-Clause license. See Licence.txt for the full licence."
 __author__ = "Deanna Earley"
 
+
 class Color:
     def __init__(self, r: int, g: int, b: int):
         """
@@ -42,9 +43,9 @@ class Color:
             Color: A Color object with the associated red, green, and blue values
         """
         return Color(
-            (hex_value & 0x00ff0000) >> 16,
-            (hex_value & 0x0000ff00) >> 8,
-            (hex_value & 0x000000ff) >> 0
+            (hex_value & 0x00FF0000) >> 16,
+            (hex_value & 0x0000FF00) >> 8,
+            (hex_value & 0x000000FF) >> 0,
         )
 
     def Black():

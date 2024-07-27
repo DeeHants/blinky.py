@@ -6,6 +6,7 @@ from abc import ABC, abstractmethod
 
 from .Frame import Frame
 
+
 class Animation(Frame):
     """
     Interface used by classes to provide the animation frame.

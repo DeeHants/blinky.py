@@ -4,14 +4,13 @@ __author__ = "Deanna Earley"
 
 import blinkyLib
 
-serial_port = 'COM6'
+serial_port = "COM6"
 led_count = 60
 
 # Connect to the strip
 tape = blinkyLib.BlinkyTape(serial_port, led_count)
 
 # Animation
-import time
 from blinkyLib.Sequence import Sequence
 animation = Sequence()
 animation.add_frames([

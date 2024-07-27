@@ -9,6 +9,7 @@ from .Constants import Consts
 from .Animation import Animation
 from .Frame import Frame
 
+
 class BlinkyTape:
     """
     BlinkyTape interface class.
@@ -26,7 +27,7 @@ class BlinkyTape:
         """
         return BlinkyTape.lastLEDCount
 
-    def __init__(self, port: str = '', led_count: int = Consts.DEFAULT_LED_COUNT):
+    def __init__(self, port: str = "", led_count: int = Consts.DEFAULT_LED_COUNT):
         """
         Initializes a new instance of the BlinkyTape class.
 
@@ -43,7 +44,7 @@ class BlinkyTape:
 
         # Try and open the port
         self.ser = None
-        if port != '':
+        if port != "":
             self.ser = serial.Serial(port, 115200)
 
     @property

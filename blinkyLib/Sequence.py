@@ -8,6 +8,7 @@ from .Color import Color
 from .Frame import Frame
 from .Animation import Animation
 
+
 class Sequence(Animation):
     """
     Animated sequence of frames
@@ -57,7 +58,6 @@ class Sequence(Animation):
             # Get the new frame data
             self._frame = self._frames[self._frame_index]
 
-
     def add_frame(self, frame: Frame):
         """
         Adds a single frame to the sequence.
@@ -91,11 +91,12 @@ class Sequence(Animation):
         Sets up the next frame of the sequence.
         """
         # If there are no frames, we can't do anything here.
-        if len(self._frames) == 0: return
+        if len(self._frames) == 0:
+            return
 
         # Increment wrapping around to the beginning.
         self._frame_index += 1
-        if (self._frame_index >= len(self._frames)):
+        if self._frame_index >= len(self._frames):
             self._frame_index = 0
 
         # Get the new frame data

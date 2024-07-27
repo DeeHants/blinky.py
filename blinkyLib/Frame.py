@@ -6,6 +6,7 @@ from abc import ABC, abstractmethod
 
 from .Color import Color
 
+
 class Frame(ABC):
     """
     Interface used by classes to provide the data for a single frame.

@@ -7,6 +7,7 @@ from .BlinkyTape import BlinkyTape
 from .Color import Color
 from .Frame import Frame
 
+
 class StaticFrame(Frame):
     """
     Represents a single, static frame of BlinkyTape LEDs.
@@ -53,10 +54,12 @@ class StaticFrame(Frame):
         """
 
         # Set all LEDs to the same color
-        for led in range(start, end + 1): # Remember it's exclusive
+        for led in range(start, end + 1):  # Remember it's exclusive
             self._leds[led] = color
 
-    def set_range_fade(self, start: int, end: int, start_color: Color, end_color: Color):
+    def set_range_fade(
+        self, start: int, end: int, start_color: Color, end_color: Color
+    ):
         """
         Sets a range of LEDs to a fade between two colors.
 
@@ -81,7 +84,7 @@ class StaticFrame(Frame):
         blueRunning = start_color.b
 
         # Fill in the range
-        for led in range(start, end + 1): # Remember it's exclusive
+        for led in range(start, end + 1):  # Remember it's exclusive
             color = Color(int(redRunning), int(greenRunning), int(blueRunning))
             self._leds[led] = color
 
@@ -105,7 +108,9 @@ class StaticFrame(Frame):
         frame.set_range(0, led_count - 1, color)
         return frame
 
-    def create_fade_frame(color1: Color, color2: Color, led_count: int = BlinkyTape.lastLEDCount):
+    def create_fade_frame(
+        color1: Color, color2: Color, led_count: int = BlinkyTape.lastLEDCount
+    ):
         """
         Creates a frame with a fade between two colors.
 

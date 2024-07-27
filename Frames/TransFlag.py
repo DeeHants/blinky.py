@@ -4,6 +4,7 @@ __author__ = "Deanna Earley"
 
 import blinkyLib
 
+
 class TransFlag(blinkyLib.StaticFrame):
     """
     Single frame with the trans pride flag.
@@ -16,9 +17,9 @@ class TransFlag(blinkyLib.StaticFrame):
 
         blinkyLib.StaticFrame.__init__(self)
 
-        blue = blinkyLib.Color(0x1E, 0x90, 0xFF);
-        pink = blinkyLib.Color(0xFF, 0,    0xFF)
-        white = blinkyLib.Color.White();
+        blue = blinkyLib.Color(0x1E, 0x90, 0xFF)
+        pink = blinkyLib.Color(0xFF, 0, 0xFF)
+        white = blinkyLib.Color.White()
 
         # Trans pride
         self.set_range(0, 59, blue)
