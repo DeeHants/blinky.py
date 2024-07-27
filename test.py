@@ -52,3 +52,8 @@ animation.add_frames([
     blinkyLib.StaticFrame.create_solid_frame(blinkyLib.Color.Blue()),
 ])
 tape.animate(animation, 1, 20)
+
+# Color swirl
+from Animations.ColorSwirl import ColorSwirl
+animation = ColorSwirl(60)
+tape.animate(animation, 0.02, 200)
