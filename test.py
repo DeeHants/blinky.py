@@ -51,8 +51,4 @@ animation.add_frames([
     blinkyLib.StaticFrame.create_solid_frame(blinkyLib.Color.Green()),
     blinkyLib.StaticFrame.create_solid_frame(blinkyLib.Color.Blue()),
 ])
-animation.reset()
-for index in range(20):
-    tape.render_frame(animation)
-    time.sleep(1)
-    animation.next_frame()
+tape.animate(animation, 1, 20)

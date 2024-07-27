@@ -3,8 +3,10 @@ __license__ = "This source code is subject to the BSD 3-Clause license. See Lice
 __author__ = "Deanna Earley"
 
 import serial
+import time
 
 from .Constants import Consts
+from .Animation import Animation
 from .Frame import Frame
 
 class BlinkyTape:
@@ -75,3 +77,10 @@ class BlinkyTape:
 
         # Send the data
         self.ser.write(data_bytes)
+
+    def animate(self, animation: Animation, interval: float, count: int):
+        animation.reset()
+        for index in range(count):
+            self.render_frame(animation)
+            time.sleep(interval)
+            animation.next_frame()
