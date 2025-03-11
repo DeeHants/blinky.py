@@ -4,4 +4,4 @@ __author__ = "Deanna Earley"
 
 
 class Consts:
-    DEFAULT_LED_COUNT = 60
+    DEFAULT_LED_COUNT : int = 60

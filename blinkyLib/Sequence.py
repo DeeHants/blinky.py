@@ -28,11 +28,11 @@ class Sequence(Animation):
         self._frame = None
 
     @property
-    def led_count(self):
+    def led_count(self) -> int:
         """Gets the number of LEDs in this frame."""
         return self._led_count
 
-    def led_value(self, led: int):
+    def led_value(self, led: int) -> Color:
         """
         Gets the color of an individual LED.
 

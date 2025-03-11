@@ -27,11 +27,11 @@ class StaticFrame(Frame):
             self._leds.append(Color.Black())
 
     @property
-    def led_count(self):
+    def led_count(self) -> int:
         """Gets the number of LEDs in this frame."""
         return self._led_count
 
-    def led_value(self, led: int):
+    def led_value(self, led: int) -> Color:
         """
         Gets the color of an individual LED.
 
@@ -92,7 +92,7 @@ class StaticFrame(Frame):
             greenRunning += greenStep
             blueRunning += blueStep
 
-    def create_solid_frame(color: Color, led_count: int = BlinkyTape.LastLEDCount()):
+    def create_solid_frame(color: Color, led_count: int = BlinkyTape.LastLEDCount()) -> Frame:
         """
         Creates a frame with all LEDs at the same color.
 
@@ -110,7 +110,7 @@ class StaticFrame(Frame):
 
     def create_fade_frame(
         color1: Color, color2: Color, led_count: int = BlinkyTape.lastLEDCount
-    ):
+    ) -> Frame:
         """
         Creates a frame with a fade between two colors.
 

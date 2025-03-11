@@ -31,7 +31,7 @@ class ColorSwirl(blinkyLib.Animation):
         self._k = 0
 
     @property
-    def led_count(self):
+    def led_count(self) -> int:
         """Gets the number of LEDs in this frame."""
         return self._led_count
 
@@ -40,7 +40,7 @@ class ColorSwirl(blinkyLib.Animation):
         self._f = 0
         self._k = 0
 
-    def led_value(self, led: int):
+    def led_value(self, led: int) -> blinkyLib.Color:
         """
         Gets the color of an individual LED.
 
@@ -53,7 +53,7 @@ class ColorSwirl(blinkyLib.Animation):
         r = 64.0 * (1.0 + math.sin(led / 2.0 + self._j / 4.0)) * self._rBal
         g = 64.0 * (1.0 + math.sin(led / 1.0 + self._f / 9.0 + 2.1)) * self._gBal
         b = 64.0 * (1.0 + math.sin(led / 3.0 + self._k / 14.0 + 4.2)) * self._bBal
-        return blinkyLib.Color(r, g, b)
+        return blinkyLib.Color(int(r), int(g), int(b))
 
     def next_frame(self):
         self._j += 1

@@ -25,7 +25,7 @@ class Pulser(blinkyLib.Animation):
         self._direction = 1
 
     @property
-    def led_count(self):
+    def led_count(self) -> int:
         """Gets the number of LEDs in this frame."""
         return self._led_count
 
@@ -33,7 +33,7 @@ class Pulser(blinkyLib.Animation):
         self._current = 0
         self._direction = 1
 
-    def led_value(self, led: int):
+    def led_value(self, led: int) -> blinkyLib.Color:
         # Light the current LED, and 2 behind it
         if led == self._current:
             return blinkyLib.Color.Red()

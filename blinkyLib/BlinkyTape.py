@@ -21,7 +21,7 @@ class BlinkyTape:
 
     lastLEDCount = Consts.DEFAULT_LED_COUNT
 
-    def LastLEDCount():
+    def LastLEDCount() -> int:
         """
         Gets the LED count of the last BlinkyTape instance created to use as the default count for <see cref="Frame"/> instances.
         """
@@ -43,12 +43,12 @@ class BlinkyTape:
         BlinkyTape.lastLedCount = led_count
 
         # Try and open the port
-        self.ser = None
+        self.ser : serial.Serial = None
         if port != "":
             self.ser = serial.Serial(port, 115200)
 
     @property
-    def led_count(self):
+    def led_count(self) -> int:
         """Gets the number of LEDs in this BlinkyTape instance."""
         return self._led_count
 

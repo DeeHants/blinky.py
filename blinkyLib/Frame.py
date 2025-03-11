@@ -14,12 +14,12 @@ class Frame(ABC):
 
     @property
     @abstractmethod
-    def led_count(self):
+    def led_count(self) -> int:
         """Gets the number of LEDs in this frame."""
         return 0
 
     @abstractmethod
-    def led_value(self, led: int):
+    def led_value(self, led: int) -> Color:
         """
         Gets the color of an individual LED.
 

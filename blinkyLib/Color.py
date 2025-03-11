@@ -2,7 +2,10 @@ __copyright__ = "Copyright Earl Software"
 __license__ = "This source code is subject to the BSD 3-Clause license. See Licence.txt for the full licence."
 __author__ = "Deanna Earley"
 
+from typing import TypeVar
 
+
+TColor = TypeVar('TColor', bound='Color') # See PEP 484 in lieu of PEP 673
 class Color:
     def __init__(self, r: int, g: int, b: int):
         """
@@ -18,21 +21,21 @@ class Color:
         self._b = int(b)
 
     @property
-    def r(self):
+    def r(self) -> int:
         """Return the color red component."""
         return self._r
 
     @property
-    def g(self):
+    def g(self) -> int:
         """Return the color green component."""
         return self._g
 
     @property
-    def b(self):
+    def b(self) -> int:
         """Return the color blue component."""
         return self._b
 
-    def from_hex(hex_value: int):
+    def from_hex(hex_value: int) -> TColor:
         """
         Return a Color object for a given 24-bit color value.
 
@@ -48,17 +51,17 @@ class Color:
             (hex_value & 0x000000FF) >> 0,
         )
 
-    def Black():
+    def Black() -> TColor:
         return Color(0, 0, 0)
 
-    def White():
+    def White() -> TColor:
         return Color(255, 255, 255)
 
-    def Red():
+    def Red() -> TColor:
         return Color(255, 0, 0)
 
-    def Green():
+    def Green() -> TColor:
         return Color(0, 255, 0)
 
-    def Blue():
+    def Blue() -> TColor:
         return Color(0, 0, 255)
