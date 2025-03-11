@@ -35,6 +35,7 @@ class Color:
         """Return the color blue component."""
         return self._b
 
+    @staticmethod
     def from_hex(hex_value: int) -> TColor:
         """
         Return a Color object for a given 24-bit color value.
@@ -51,17 +52,22 @@ class Color:
             (hex_value & 0x000000FF) >> 0,
         )
 
+    @staticmethod
     def Black() -> TColor:
         return Color(0, 0, 0)
 
+    @staticmethod
     def White() -> TColor:
         return Color(255, 255, 255)
 
+    @staticmethod
     def Red() -> TColor:
         return Color(255, 0, 0)
 
+    @staticmethod
     def Green() -> TColor:
         return Color(0, 255, 0)
 
+    @staticmethod
     def Blue() -> TColor:
         return Color(0, 0, 255)

@@ -92,6 +92,7 @@ class StaticFrame(Frame):
             greenRunning += greenStep
             blueRunning += blueStep
 
+    @staticmethod
     def create_solid_frame(color: Color, led_count: int = BlinkyTape.LastLEDCount()) -> Frame:
         """
         Creates a frame with all LEDs at the same color.
@@ -108,6 +109,7 @@ class StaticFrame(Frame):
         frame.set_range(0, led_count - 1, color)
         return frame
 
+    @staticmethod
     def create_fade_frame(
         color1: Color, color2: Color, led_count: int = BlinkyTape.lastLEDCount
     ) -> Frame:

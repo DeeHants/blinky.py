@@ -21,6 +21,7 @@ class BlinkyTape:
 
     lastLEDCount = Consts.DEFAULT_LED_COUNT
 
+    @staticmethod
     def LastLEDCount() -> int:
         """
         Gets the LED count of the last BlinkyTape instance created to use as the default count for <see cref="Frame"/> instances.
