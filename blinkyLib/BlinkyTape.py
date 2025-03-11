@@ -66,9 +66,10 @@ class BlinkyTape:
         for led in range(0, count):
             # 3 bytes, RGB, limited to a maximum of 254 as 255 is special.
             offset = led * 3
-            data_bytes[offset] = min(frame.led_value(led).r, 254)
-            data_bytes[offset + 1] = min(frame.led_value(led).g, 254)
-            data_bytes[offset + 2] = min(frame.led_value(led).b, 254)
+            led_color = frame.led_value(led)
+            data_bytes[offset] = min(led_color.r, 254)
+            data_bytes[offset + 1] = min(led_color.g, 254)
+            data_bytes[offset + 2] = min(led_color.b, 254)
 
         # The sketch only reads three bytes at a time so send 3 with the final 0xFF
         offset = count * 3
