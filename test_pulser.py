@@ -3,12 +3,10 @@ __license__ = "This source code is subject to the BSD 3-Clause license. See Lice
 __author__ = "Deanna Earley"
 
 import blinkyLib
-
-serial_port = 'COM6'
-led_count = 60
+import test_device
 
 # Connect to the strip
-tape = blinkyLib.BlinkyTape(serial_port, led_count)
+tape = blinkyLib.BlinkyTape(test_device.serial_port, test_device.led_count)
 
 # Color swirl
 loops = 2
