@@ -5,3 +5,6 @@ __author__ = "Deanna Earley"
 
 class Consts:
     DEFAULT_LED_COUNT : int = 60
+
+    # Not constant, but needs to be in an early module with no dependencies
+    _lastLedCount: int = DEFAULT_LED_COUNT

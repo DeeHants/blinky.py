@@ -18,7 +18,7 @@ class PrideFlag(blinkyLib.StaticFrame):
             faded (bool, optional): Whether to fade between the colours sections
         """
 
-        blinkyLib.StaticFrame.__init__(self)
+        super().__init__(60)
 
         purple = blinkyLib.Color(128, 0, 128)
         blue = blinkyLib.Color.Blue()

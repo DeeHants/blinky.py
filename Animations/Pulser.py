@@ -11,7 +11,7 @@ class Pulser(blinkyLib.Animation):
     Pulser animation where a red light bounces form end to end with a trail
     """
 
-    def __init__(self, led_count: int = 60):
+    def __init__(self, led_count: int = 0):
         """
         Initializes a new instance of the Pulser class.
 
@@ -19,15 +19,10 @@ class Pulser(blinkyLib.Animation):
             led_count (int, optional): The number of LEDs in this animation.
         """
 
-        self._led_count = led_count
+        super().__init__(led_count)
 
         self._current = 0
         self._direction = 1
-
-    @property
-    def led_count(self) -> int:
-        """Gets the number of LEDs in this frame."""
-        return self._led_count
 
     def reset(self):
         self._current = 0

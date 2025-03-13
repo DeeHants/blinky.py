@@ -12,7 +12,7 @@ class ColorSwirl(blinkyLib.Animation):
     https://github.com/Blinkinlabs/BlinkyTape_Arduino/blob/master/examples/ColorSwirl/ColorSwirl.ino
     """
 
-    def __init__(self, led_count: int = 60):
+    def __init__(self, led_count: int = 0):
         """
         Initializes a new instance of the ColorSwirl class.
 
@@ -20,7 +20,7 @@ class ColorSwirl(blinkyLib.Animation):
             led_count (int, optional): The number of LEDs in this animation.
         """
 
-        self._led_count = led_count
+        super().__init__(led_count)
 
         self._rBal = 2
         self._gBal = 2
@@ -29,11 +29,6 @@ class ColorSwirl(blinkyLib.Animation):
         self._j = 0
         self._f = 0
         self._k = 0
-
-    @property
-    def led_count(self) -> int:
-        """Gets the number of LEDs in this frame."""
-        return self._led_count
 
     def reset(self):
         self._j = 0

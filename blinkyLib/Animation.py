@@ -12,9 +12,9 @@ class Animation(Frame):
     Interface used by classes to provide the animation frame.
     """
 
-    # led_count is still an abstract property from Frame
+    # led_count is a property from Frame
 
-    # led_value is still an abstract method from Frame
+    # led_value is an abstract method from Frame
 
     @abstractmethod
     def reset(self):

@@ -15,7 +15,7 @@ class TransFlag(blinkyLib.StaticFrame):
         Initializes a new instance of the TransFlag class.
         """
 
-        blinkyLib.StaticFrame.__init__(self)
+        super().__init__(60)
 
         blue = blinkyLib.Color(0x1E, 0x90, 0xFF)
         pink = blinkyLib.Color(0xFF, 0, 0xFF)

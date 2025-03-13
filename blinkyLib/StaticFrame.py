@@ -13,23 +13,19 @@ class StaticFrame(Frame):
     Represents a single, static frame of BlinkyTape LEDs.
     """
 
-    def __init__(self, led_count: int = BlinkyTape.lastLEDCount):
+    def __init__(self, led_count: int = 0):
         """
         Initializes a new instance of the StaticFrame class.
 
         Args:
-            led_count (int, optional): The number of LEDs in this frame. Defaults to BlinkyTape.lastLEDCount.
+            led_count (int, optional): The number of LEDs in this frame.
         """
 
-        self._led_count = led_count
-        self._leds = []
-        for led in range(self._led_count):
-            self._leds.append(Color.Black())
+        super().__init__(led_count)
 
-    @property
-    def led_count(self) -> int:
-        """Gets the number of LEDs in this frame."""
-        return self._led_count
+        self._leds = []
+        for led in range(self.led_count):
+            self._leds.append(Color.Black())
 
     def led_value(self, led: int) -> Color:
         """
@@ -93,25 +89,25 @@ class StaticFrame(Frame):
             blueRunning += blueStep
 
     @staticmethod
-    def create_solid_frame(color: Color, led_count: int = BlinkyTape.LastLEDCount()) -> Frame:
+    def create_solid_frame(color: Color, led_count: int = 0) -> Frame:
         """
         Creates a frame with all LEDs at the same color.
 
         Args:
             color (Color): The color of all the LEDs.
-            led_count (int, optional): The number of LEDs in this frame. Defaults to BlinkyTape.LastLEDCount().
+            led_count (int, optional): The number of LEDs in this frame.
 
         Returns:
             Frame: Returns the full Frame object.
         """
 
         frame = StaticFrame(led_count)
-        frame.set_range(0, led_count - 1, color)
+        frame.set_range(0, frame.led_count - 1, color)
         return frame
 
     @staticmethod
     def create_fade_frame(
-        color1: Color, color2: Color, led_count: int = BlinkyTape.lastLEDCount
+        color1: Color, color2: Color, led_count: int = 0
     ) -> Frame:
         """
         Creates a frame with a fade between two colors.
@@ -119,12 +115,12 @@ class StaticFrame(Frame):
         Args:
             color1 (Color): The first LED color.
             color2 (Color): The last LED color.
-            led_count (int, optional): The number of LEDs in this frame. Defaults to BlinkyTape.lastLEDCount.
+            led_count (int, optional): The number of LEDs in this frame.
 
         Returns:
             Frame: Returns the full Frame object.
         """
 
         frame = StaticFrame(led_count)
-        frame.set_range_fade(0, led_count - 1, color1, color2)
+        frame.set_range_fade(0, frame.led_count - 1, color1, color2)
         return frame

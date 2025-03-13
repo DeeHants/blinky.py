@@ -7,10 +7,10 @@ import test_device
 
 # Connect to the strip
 tape = blinkyLib.BlinkyTape(test_device.serial_port, test_device.led_count)
-led_count = tape.led_count
 
 # Multi fade
 frame = blinkyLib.StaticFrame()
+led_count = frame.led_count
 frame.set_range_fade(
     0, int(led_count / 2),
     blinkyLib.Color.Red(),

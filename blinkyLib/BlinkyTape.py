@@ -19,15 +19,6 @@ class BlinkyTape:
     https://github.com/Blinkinlabs/BlinkyTape_Arduino/blob/master/examples/ColorSwirl/ColorSwirl.ino
     """
 
-    lastLEDCount = Consts.DEFAULT_LED_COUNT
-
-    @staticmethod
-    def LastLEDCount() -> int:
-        """
-        Gets the LED count of the last BlinkyTape instance created to use as the default count for <see cref="Frame"/> instances.
-        """
-        return BlinkyTape.lastLEDCount
-
     def __init__(self, port: str = "", led_count: int = Consts.DEFAULT_LED_COUNT):
         """
         Initializes a new instance of the BlinkyTape class.
@@ -41,7 +32,7 @@ class BlinkyTape:
         self._led_count = led_count
 
         # Save the LED count so it's used as the default count for all Frame objects
-        BlinkyTape.lastLedCount = led_count
+        Consts._lastLedCount = led_count
 
         # Try and open the port
         self.ser : serial.Serial = None

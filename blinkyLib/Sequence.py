@@ -14,23 +14,19 @@ class Sequence(Animation):
     Animated sequence of frames
     """
 
-    def __init__(self, led_count: int = BlinkyTape.lastLEDCount):
+    def __init__(self, led_count: int = 0):
         """
         Initializes a new instance of the Strobe class.
 
         Args:
-            led_count (int, optional): The number of LEDs in this frame. Defaults to BlinkyTape.lastLEDCount.
+            led_count (int, optional): The number of LEDs in this frame.
         """
 
-        self._led_count = led_count
+        super().__init__(led_count)
+
         self._frames = []
         self._frame_index = -1
         self._frame = None
-
-    @property
-    def led_count(self) -> int:
-        """Gets the number of LEDs in this frame."""
-        return self._led_count
 
     def led_value(self, led: int) -> Color:
         """

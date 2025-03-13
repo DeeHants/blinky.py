@@ -8,9 +8,8 @@ import test_device
 # Connect to the strip
 tape = blinkyLib.BlinkyTape(test_device.serial_port, test_device.led_count)
 
-# Color swirl
+# Pulse
 loops = 2
-leds = 60
 from Animations.Pulser import Pulser
-animation = Pulser(leds)
-tape.animate(animation, 0.02, ((leds - 1) * loops * 2) + 1)
+animation = Pulser()
+tape.animate(animation, 0.02, ((animation.led_count - 1) * loops * 2) + 1)

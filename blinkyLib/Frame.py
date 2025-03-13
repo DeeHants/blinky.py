@@ -4,6 +4,7 @@ __author__ = "Deanna Earley"
 
 from abc import ABC, abstractmethod
 
+from .Constants import Consts
 from .Color import Color
 
 
@@ -12,11 +13,22 @@ class Frame(ABC):
     Interface used by classes to provide the data for a single frame.
     """
 
+    def __init__(self, led_count: int = 0):
+        """
+        Initializes a new instance of the Frame class.
+
+        Args:
+            led_count (int, optional): The number of LEDs in this frame.
+        """
+
+        if led_count == 0:
+            led_count = Consts._lastLedCount
+        self._led_count = led_count
+
     @property
-    @abstractmethod
     def led_count(self) -> int:
         """Gets the number of LEDs in this frame."""
-        return 0
+        return self._led_count
 
     @abstractmethod
     def led_value(self, led: int) -> Color:
