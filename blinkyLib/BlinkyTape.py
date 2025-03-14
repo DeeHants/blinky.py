@@ -73,8 +73,20 @@ class BlinkyTape:
         self.ser.write(data_bytes)
 
     def animate(self, animation: Animation, interval: float, count: int):
+        """
+        Renders an animated frame on a loop.
+
+        Args:
+            animation (Animation): The animation to render on the BlinkyTape.
+            interval (float): Interval to wait between frames in seconds.
+            count (int): The number of frames to render. -1 to loop continuously.
+        """
+
         animation.reset()
-        for index in range(count):
+        index = 0
+
+        while count == -1 or index < count:
             self.render_frame(animation)
             time.sleep(interval)
             animation.next_frame()
+            if count >= 0: index = index + 1

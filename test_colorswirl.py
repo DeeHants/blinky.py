@@ -11,4 +11,4 @@ tape = blinkyLib.BlinkyTape(test_device.serial_port, test_device.led_count)
 # Color swirl
 from Animations.ColorSwirl import ColorSwirl
 animation = ColorSwirl()
-tape.animate(animation, 0.02, 200)
+tape.animate(animation, 0.02, -1)
