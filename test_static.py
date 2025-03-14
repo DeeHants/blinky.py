@@ -9,7 +9,7 @@ import test_device
 tape = blinkyLib.BlinkyTape(test_device.serial_port, test_device.led_count)
 
 # Static colour
-purple = blinkyLib.Color(128, 0, 255)
+purple = blinkyLib.Color.from_hex(0x8800ff)
 # colour = blinkyLib.Color.Black()
 frame = blinkyLib.StaticFrame.create_solid_frame(purple)
 tape.render_frame(frame)
