@@ -105,9 +105,7 @@ class StaticFrame(Frame):
         return frame
 
     @staticmethod
-    def create_fade_frame(
-        color1: Color, color2: Color, led_count: int = 0
-    ) -> Frame:
+    def create_fade_frame(color1: Color, color2: Color, led_count: int = 0) -> Frame:
         """
         Creates a frame with a fade between two colors.
 

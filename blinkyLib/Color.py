@@ -5,7 +5,9 @@ __author__ = "Deanna Earley"
 from typing import TypeVar
 
 
-TColor = TypeVar('TColor', bound='Color') # See PEP 484 in lieu of PEP 673
+TColor = TypeVar("TColor", bound="Color")  # See PEP 484 in lieu of PEP 673
+
+
 class Color:
     def __init__(self, r: int, g: int, b: int):
         """

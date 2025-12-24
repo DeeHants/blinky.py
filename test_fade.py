@@ -10,7 +10,6 @@ tape = blinkyLib.BlinkyTape(test_device.serial_port, test_device.led_count)
 
 # Fade
 frame = blinkyLib.StaticFrame.create_fade_frame(
-    blinkyLib.Color.Red(),
-    blinkyLib.Color.Green()
+    blinkyLib.Color.Red(), blinkyLib.Color.Green()
 )
 tape.render_frame(frame)

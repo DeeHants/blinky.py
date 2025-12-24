@@ -31,7 +31,7 @@ class BlinkyTape(Display):
         super().__init__(led_count)
 
         # Try and open the port
-        self.ser : serial.Serial = None
+        self.ser: serial.Serial = None
         if port != "":
             self.ser = serial.Serial(port, 115200)
 

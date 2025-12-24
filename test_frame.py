@@ -10,5 +10,6 @@ tape = blinkyLib.BlinkyTape(test_device.serial_port, test_device.led_count)
 
 # Pride flag
 from Frames.PrideFlag import PrideFlag
+
 frame = PrideFlag()
 tape.render_frame(frame)
