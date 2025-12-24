@@ -6,7 +6,7 @@ import blinkyLib
 import test_device
 
 # Connect to the strip
-tape = blinkyLib.BlinkyTape(test_device.serial_port, test_device.led_count)
+tape = test_device.get_display()
 
 # Static colour
 purple = blinkyLib.Color.from_hex(0x8800FF)
