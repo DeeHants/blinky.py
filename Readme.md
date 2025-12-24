@@ -1,14 +1,14 @@
 # README #
 
-This library is a python interface to the [BlinkyTape](http://blinkinlabs.com/blinkytape/) RGB LED strip.
+This library is a python interface to the RGB LED strips such as [BlinkyTape](http://blinkinlabs.com/blinkytape/).
 It provides support for rendering full frames on demand to the tape.
 
 This repository includes:
 
 * blinkyLib - Python classes that provide the interface and basic classes to create frames
-* test.py - Sample application demonstrating the features of the BlinkyTape library.
+* test.py - Sample application demonstrating the features of the Blinky library.
 
-### Notes ###
+### BlinkyTape Notes ###
 
 The communication methods and details in this library are based on the PatternPaint sketch and color swirl:
 

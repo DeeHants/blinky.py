@@ -4,6 +4,7 @@ __author__ = "Deanna Earley"
 
 # Import all package modules
 from .Constants import Consts
+from .Display import Display
 from .Color import Color
 from .Frame import Frame
 from .Animation import Animation

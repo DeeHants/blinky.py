@@ -3,7 +3,6 @@ __license__ = "This source code is subject to the BSD 3-Clause license. See Lice
 __author__ = "Deanna Earley"
 
 from .Constants import Consts
-from .BlinkyTape import BlinkyTape
 from .Color import Color
 from .Frame import Frame
 from .Animation import Animation

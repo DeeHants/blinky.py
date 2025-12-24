@@ -3,14 +3,14 @@ __license__ = "This source code is subject to the BSD 3-Clause license. See Lice
 __author__ = "Deanna Earley"
 
 import serial
-import time
 
 from .Constants import Consts
+from .Display import Display
 from .Animation import Animation
 from .Frame import Frame
 
 
-class BlinkyTape:
+class BlinkyTape(Display):
     """
     BlinkyTape interface class.
     The communication methods and details in this library are based on the PatternPaint sketch and color swirl:
@@ -28,21 +28,12 @@ class BlinkyTape:
             led_count (int, optional): The maximum number of LEDs to control. Defaults to Consts.DEFAULT_LED_COUNT.
         """
 
-        # Save the details we can
-        self._led_count = led_count
-
-        # Save the LED count so it's used as the default count for all Frame objects
-        Consts._lastLedCount = led_count
+        super().__init__(led_count)
 
         # Try and open the port
         self.ser : serial.Serial = None
         if port != "":
             self.ser = serial.Serial(port, 115200)
-
-    @property
-    def led_count(self) -> int:
-        """Gets the number of LEDs in this BlinkyTape instance."""
-        return self._led_count
 
     def render_frame(self, frame: Frame):
         """
@@ -71,22 +62,3 @@ class BlinkyTape:
 
         # Send the data
         self.ser.write(data_bytes)
-
-    def animate(self, animation: Animation, interval: float, count: int):
-        """
-        Renders an animated frame on a loop.
-
-        Args:
-            animation (Animation): The animation to render on the BlinkyTape.
-            interval (float): Interval to wait between frames in seconds.
-            count (int): The number of frames to render. -1 to loop continuously.
-        """
-
-        animation.reset()
-        index = 0
-
-        while count == -1 or index < count:
-            self.render_frame(animation)
-            time.sleep(interval)
-            animation.next_frame()
-            if count >= 0: index = index + 1

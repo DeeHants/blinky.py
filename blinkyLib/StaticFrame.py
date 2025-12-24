@@ -3,14 +3,13 @@ __license__ = "This source code is subject to the BSD 3-Clause license. See Lice
 __author__ = "Deanna Earley"
 
 from .Constants import Consts
-from .BlinkyTape import BlinkyTape
 from .Color import Color
 from .Frame import Frame
 
 
 class StaticFrame(Frame):
     """
-    Represents a single, static frame of BlinkyTape LEDs.
+    Represents a single, static frame of LEDs.
     """
 
     def __init__(self, led_count: int = 0):
