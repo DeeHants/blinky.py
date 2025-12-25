@@ -19,5 +19,5 @@ def get_blinkytape_display():
 def get_wled_display():
     # Change the port and count to match your device
     controller_ip = "192.168.1.69"
-    led_count = 27
+    led_count = 0  # 0 to auto-detect
     return blinkyLib.WLED(controller_ip, led_count)

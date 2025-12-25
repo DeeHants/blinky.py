@@ -23,13 +23,20 @@ class WLED(Display):
 
         Args:
             address (str): The WLED controller address to connect to.
-            led_count (int, optional): The maximum number of LEDs to control. Defaults to Consts.DEFAULT_LED_COUNT.
+            led_count (int, optional): The maximum number of LEDs to control. Defaults to getting the LED count from the controller
         """
-
-        super().__init__(led_count)
 
         # Save the address
         self._address = address
+
+        # Test the connection
+        state = self._get_state()
+
+        # Get the actual LED count if auto-detecting
+        if led_count == 0:
+            led_count = state["info"]["leds"]["count"]
+
+        super().__init__(led_count)
 
     def render_frame(self, frame: Frame):
         """
@@ -55,4 +62,9 @@ class WLED(Display):
     def _send_state(self, state: dict):
         url = f"http://{self._address}/json"
         response = requests.post(url, json=state)
+        return response.json()
+
+    def _get_state(self):
+        url = f"http://{self._address}/json"
+        response = requests.get(url)
         return response.json()
