@@ -38,21 +38,30 @@ class Color:
         return self._b
 
     @staticmethod
-    def from_hex(hex_value: int) -> TColor:
+    def from_value(value: int) -> TColor:
         """
         Return a Color object for a given 24-bit color value.
 
         Args:
-            hex_value (int): An integer containing the 24-bit color value.
+            value (int): An integer containing the 24-bit color value.
 
         Returns:
             Color: A Color object with the associated red, green, and blue values
         """
         return Color(
-            (hex_value & 0x00FF0000) >> 16,
-            (hex_value & 0x0000FF00) >> 8,
-            (hex_value & 0x000000FF) >> 0,
+            (value & 0x00FF0000) >> 16,
+            (value & 0x0000FF00) >> 8,
+            (value & 0x000000FF) >> 0,
         )
+
+    def to_value(self) -> int:
+        """
+        Return the 24-bit color value for this Color object.
+
+        Returns:
+            int: An integer containing the 24-bit color value.
+        """
+        return (self.r << 16) + (self.g << 8) + (self.b << 0)
 
     @staticmethod
     def Black() -> TColor:

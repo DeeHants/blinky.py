@@ -1,6 +1,6 @@
 # README #
 
-This library is a python interface to the RGB LED strips such as [BlinkyTape](http://blinkinlabs.com/blinkytape/).
+This library is a python interface to the RGB LED strips such as [WLED controllers](https://kno.wled.ge/) and [BlinkyTapes](http://blinkinlabs.com/blinkytape/).
 It provides support for rendering full frames on demand to the tape.
 
 This repository includes:
@@ -21,6 +21,7 @@ The driver can also be [installed manually](http://forums.blinkinlabs.com/index.
 
 ### Links ###
 
+* https://kno.wled.ge/
 * http://blinkinlabs.com/blinkytape/
 * http://forums.blinkinlabs.com/
 * https://github.com/Blinkinlabs/

@@ -9,7 +9,7 @@ import test_device
 tape = test_device.get_display()
 
 # Static colour
-purple = blinkyLib.Color.from_hex(0x8800FF)
+purple = blinkyLib.Color.from_value(0x8800FF)
 # colour = blinkyLib.Color.Black()
 frame = blinkyLib.StaticFrame.create_solid_frame(purple)
 tape.render_frame(frame)
