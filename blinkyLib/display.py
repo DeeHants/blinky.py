@@ -4,9 +4,9 @@ __author__ = "Deanna Earley"
 
 import time
 
-from .Constants import Consts
-from .Animation import Animation
-from .Frame import Frame
+from .constants import Consts
+from .animation import Animation
+from .frame import Frame
 
 
 class Display:

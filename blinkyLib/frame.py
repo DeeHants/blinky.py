@@ -4,8 +4,8 @@ __author__ = "Deanna Earley"
 
 from abc import ABC, abstractmethod
 
-from .Constants import Consts
-from .Color import Color
+from .constants import Consts
+from .color import Color
 
 
 class Frame(ABC):

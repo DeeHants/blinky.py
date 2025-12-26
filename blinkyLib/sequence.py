@@ -2,10 +2,10 @@ __copyright__ = "Copyright Earl Software"
 __license__ = "This source code is subject to the BSD 3-Clause license. See Licence.txt for the full licence."
 __author__ = "Deanna Earley"
 
-from .Constants import Consts
-from .Color import Color
-from .Frame import Frame
-from .Animation import Animation
+from .constants import Consts
+from .color import Color
+from .frame import Frame
+from .animation import Animation
 
 
 class Sequence(Animation):

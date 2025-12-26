@@ -3,15 +3,15 @@ __license__ = "This source code is subject to the BSD 3-Clause license. See Lice
 __author__ = "Deanna Earley"
 
 # Import all package modules
-from .Constants import Consts
-from .Display import Display
-from .Color import Color
-from .Frame import Frame
-from .Animation import Animation
-from .StaticFrame import StaticFrame
-from .Sequence import Sequence
-from .BlinkyTape import BlinkyTape
-from .DDP import DDP
-from .WLED import WLED
+from .constants import Consts
+from .display import Display
+from .color import Color
+from .frame import Frame
+from .animation import Animation
+from .static_frame import StaticFrame
+from .sequence import Sequence
+from .blinkytape import BlinkyTape
+from .ddp import DDP
+from .wled import WLED
 
-version = "0.2"
+version = "0.3"

@@ -9,9 +9,7 @@ import test_device
 tape = test_device.get_display()
 
 # Animation
-from blinkyLib.Sequence import Sequence
-
-animation = Sequence()
+animation = blinkyLib.Sequence()
 animation.add_frames(
     [
         blinkyLib.StaticFrame.create_solid_frame(blinkyLib.Color.Red()),

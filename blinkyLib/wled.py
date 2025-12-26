@@ -4,9 +4,9 @@ __author__ = "Deanna Earley"
 
 import requests
 
-from .Constants import Consts
-from .Display import Display
-from .Frame import Frame
+from .constants import Consts
+from .display import Display
+from .frame import Frame
 
 
 class WLED(Display):

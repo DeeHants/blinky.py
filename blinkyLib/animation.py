@@ -4,7 +4,7 @@ __author__ = "Deanna Earley"
 
 from abc import ABC, abstractmethod
 
-from .Frame import Frame
+from .frame import Frame
 
 
 class Animation(Frame):
