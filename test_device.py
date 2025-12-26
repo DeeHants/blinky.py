@@ -14,4 +14,5 @@ def get_display():
     # return blinkyLib.WLED("192.168.1.69") # Auto detect LED count
 
     # DDP interface to a WLED controller
-    return blinkyLib.DDP("192.168.1.69", 27)
+    wled = blinkyLib.WLED("192.168.1.69") # Auto detect LED count
+    return blinkyLib.DDP("192.168.1.69", wled.led_count)
