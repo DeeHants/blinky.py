@@ -2,6 +2,7 @@ __copyright__ = "Copyright Earl Software"
 __license__ = "This source code is subject to the BSD 3-Clause license. See Licence.txt for the full licence."
 __author__ = "Deanna Earley"
 
+from abc import ABC, abstractmethod
 import time
 
 from .constants import Consts
@@ -33,6 +34,7 @@ class Display:
         """Gets the number of LEDs in this display instance."""
         return self._led_count
 
+    @abstractmethod
     def render_frame(self, frame: Frame):
         """
         Renders the frame on the display.

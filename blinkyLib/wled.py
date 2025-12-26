@@ -72,7 +72,7 @@ class WLED(Display):
         response = requests.post(url, json=state)
         return response.json()
 
-    def _get_state(self):
+    def _get_state(self) -> dict:
         url = f"http://{self._address}/json"
         response = requests.get(url)
         return response.json()

@@ -6,7 +6,7 @@ import blinkyLib
 
 
 # Change the details to match your device
-def get_display():
+def get_display() -> blinkyLib.Display:
     # # BlinkyTape on a serial port
     # return blinkyLib.BlinkyTape("COM3", 60)
 
