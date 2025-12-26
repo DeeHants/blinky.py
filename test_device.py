@@ -10,5 +10,8 @@ def get_display():
     # # BlinkyTape on a serial port
     # return blinkyLib.BlinkyTape("COM3", 60)
 
-    # WLED controller
-    return blinkyLib.WLED("192.168.1.69") # Auto detect LED count
+    # # WLED controller
+    # return blinkyLib.WLED("192.168.1.69") # Auto detect LED count
+
+    # DDP interface to a WLED controller
+    return blinkyLib.DDP("192.168.1.69", 27)

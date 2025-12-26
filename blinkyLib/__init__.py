@@ -11,6 +11,7 @@ from .Animation import Animation
 from .StaticFrame import StaticFrame
 from .Sequence import Sequence
 from .BlinkyTape import BlinkyTape
+from .DDP import DDP
 from .WLED import WLED
 
 version = "0.2"
