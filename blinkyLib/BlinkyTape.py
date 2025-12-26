@@ -19,13 +19,15 @@ class BlinkyTape(Display):
     https://github.com/Blinkinlabs/BlinkyTape_Arduino/blob/master/examples/ColorSwirl/ColorSwirl.ino
     """
 
-    def __init__(self, port: str = "", led_count: int = Consts.DEFAULT_LED_COUNT):
+    DEFAULT_LED_COUNT: int = 60
+
+    def __init__(self, port: str = "", led_count: int = DEFAULT_LED_COUNT):
         """
         Initializes a new instance of the BlinkyTape class.
 
         Args:
             port (str, optional): The COM port name to connect to. Defaults to ''.
-            led_count (int, optional): The maximum number of LEDs to control. Defaults to Consts.DEFAULT_LED_COUNT.
+            led_count (int, optional): The maximum number of LEDs to control. Defaults to DEFAULT_LED_COUNT.
         """
 
         super().__init__(led_count)

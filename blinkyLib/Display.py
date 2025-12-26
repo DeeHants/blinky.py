@@ -14,12 +14,12 @@ class Display:
     Display interface class.
     """
 
-    def __init__(self, led_count: int = Consts.DEFAULT_LED_COUNT):
+    def __init__(self, led_count: int):
         """
         Initializes a new instance of the Display class.
 
         Args:
-            led_count (int, optional): The maximum number of LEDs to control. Defaults to Consts.DEFAULT_LED_COUNT.
+            led_count (int): The maximum number of LEDs to control.
         """
 
         # Save the details we can

@@ -17,7 +17,7 @@ class WLED(Display):
     https://kno.wled.ge/interfaces/json-api/#per-segment-individual-led-control
     """
 
-    def __init__(self, address: str, led_count: int = Consts.DEFAULT_LED_COUNT):
+    def __init__(self, address: str, led_count: int = 0):
         """
         Initializes a new instance of the WLED class.
 

@@ -4,7 +4,6 @@ __author__ = "Deanna Earley"
 
 
 class Consts:
-    DEFAULT_LED_COUNT: int = 60
-
+    # The LED count of the last display instance created to use as the default count for Frame instances
     # Not constant, but needs to be in an early module with no dependencies
-    _lastLedCount: int = DEFAULT_LED_COUNT
+    _lastLedCount: int = 0
