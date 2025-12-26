@@ -62,5 +62,15 @@ class BlinkyTape(Display):
         data_bytes[offset + 1] = 0x0
         data_bytes[offset + 2] = 0xFF
 
+        # Debug output
+        if Consts.DEBUG:
+            hex = " ".join(format(x, "02X") for x in bytearray(data_bytes))
+            print(
+                "Length {length}: {data}".format(
+                    length=len(data_bytes),
+                    data=hex,
+                )
+            )
+
         # Send the data
         self.ser.write(data_bytes)

@@ -59,6 +59,15 @@ class WLED(Display):
         # Send the desired state to the controller
         result = self._send_state(payload)
 
+        # Debug output
+        if Consts.DEBUG:
+            print(
+                "Sent {payload}, got {result}".format(
+                    payload=payload,
+                    result=result,
+                )
+            )
+
     def _send_state(self, state: dict):
         url = f"http://{self._address}/json"
         response = requests.post(url, json=state)
