@@ -14,4 +14,4 @@ from Animations.Pulser import Pulser
 
 animation = Pulser()
 # tape.animate(animation, 0.02, ((animation.led_count - 1) * loops * 2) + 1)
-tape.animate(animation, 0.02, -1)
+tape.animate(animation, 0.02, 150)

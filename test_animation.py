@@ -19,4 +19,4 @@ animation.add_frames(
         blinkyLib.StaticFrame.create_solid_frame(blinkyLib.Color.Blue()),
     ]
 )
-tape.animate(animation, 1, 20)
+tape.animate(animation, 1, 15)

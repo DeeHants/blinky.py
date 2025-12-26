@@ -12,4 +12,4 @@ tape = test_device.get_display()
 from Animations.ColorSwirl import ColorSwirl
 
 animation = ColorSwirl()
-tape.animate(animation, 0.02, -1)
+tape.animate(animation, 0.02, 100)
