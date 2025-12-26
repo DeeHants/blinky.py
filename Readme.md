@@ -32,4 +32,4 @@ This source code is subject to the BSD 3-Clause license.
 See Licence.txt for the full licence.
 
 --  
-Deanna Earley, dee@earlsoft.co.uk
+Deanna Earley
