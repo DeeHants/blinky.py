@@ -33,7 +33,8 @@ class DDP(Display):
         # Initial message sequence count
         self._sequence = 0
 
-        self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # UDP
+        self._sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # UDP
+        self._sock.connect((self._address, 4048))
 
     def render_frame(self, frame: Frame):
         """
@@ -65,7 +66,7 @@ class DDP(Display):
         data_bytes[9] = (count * 3) & 0xFF  # Length low byte
 
         # Send the desired state to the display
-        self.sock.sendto(bytes(data_bytes), (self._address, 4048))
+        self._sock.send(bytes(data_bytes))
 
         # Debug output
         if Consts.DEBUG:
