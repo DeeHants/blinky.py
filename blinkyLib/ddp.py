@@ -77,3 +77,7 @@ class DDP(Display):
                     data=hex,
                 )
             )
+
+    def __del__(self):
+        """Cleans up the socket on deletion."""
+        self._sock.close()

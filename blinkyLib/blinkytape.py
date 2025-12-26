@@ -73,3 +73,8 @@ class BlinkyTape(Display):
 
         # Send the data
         self.ser.write(data_bytes)
+
+    def __del__(self):
+        """Cleans up the serial port on deletion."""
+        if self.ser is not None:
+            self.ser.close()
