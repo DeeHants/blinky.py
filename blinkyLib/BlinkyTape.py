@@ -6,7 +6,6 @@ import serial
 
 from .Constants import Consts
 from .Display import Display
-from .Animation import Animation
 from .Frame import Frame
 
 
